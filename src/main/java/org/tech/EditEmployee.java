@@ -1,9 +1,11 @@
 package org.tech;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -57,9 +59,22 @@ public class EditEmployee extends HttpServlet {
                 preparedStatement.executeUpdate();
             }
 
-            response.sendRedirect("viewEmployees.html");
+            // Display success message and redirect to viewEmployees.html
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            out.println("<html><head><title>Employee Edit</title></head><body>");
+            out.println("<h2>Employee successfully edited!</h2>");
+            out.println("<p>Redirecting to <a href='viewEmployees.html'>View Employees</a></p>");
+            out.println("<script>setTimeout(function() { window.location.href = 'viewEmployees.html'; }, 3000);</script>");
+            out.println("</body></html>");
         } catch (Exception e) {
-            throw new ServletException("Error updating employee", e);
+            // Display failure message
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            out.println("<html><head><title>Employee Edit</title></head><body>");
+            out.println("<h2>Failed to edit employee.</h2>");
+            out.println("<p>Please try again later.</p>");
+            out.println("</body></html>");
         }
     }
 }

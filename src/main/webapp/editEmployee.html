@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Employee</title>
+    <!-- Link to locally downloaded Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<body>
-    <h2>Edit Employee</h2>
+<body class="container">
+
+    <h2 class="text-center my-5">Edit Employee</h2>
     <form action="EditEmployee" method="post">
-        <input type="hidden" name="id" value="1"> 
+        <input type="hidden" name="id" value="1">
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="John Doe" required><br>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Surafel" required>
+        </div>
 
-        <label for="designation">Designation:</label>
-        <input type="text" id="designation" name="designation" value="Software Engineer" required><br>
+        <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input type="text" class="form-control" id="designation" name="designation" placeholder="Software Engineer" required>
+        </div>
 
-        <label for="salary">Salary:</label>
-        <input type="number" id="salary" name="salary" value="50000" required><br>
+        <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input type="number" class="form-control" id="salary" name="salary" placeholder="50000" required>
+        </div>
 
-        <input type="submit" value="Update Employee">
+        <button type="submit" class="btn btn-primary">Update Employee</button>
     </form>
+
 </body>
 </html>

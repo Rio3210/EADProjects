@@ -1,6 +1,7 @@
 package org.tech;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import jakarta.servlet.ServletException;
@@ -33,9 +34,22 @@ public class AddEmployee extends HttpServlet {
                 preparedStatement.executeUpdate();
             }
 
-            response.sendRedirect("viewEmployees.html");
+            // Display success message and redirect to viewEmployees.html
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            out.println("<html><head><title>Employee Registration</title></head><body>");
+            out.println("<h2>Employee registered successfully!</h2>");
+            out.println("<p>Redirecting to <a href='viewEmployees.html'>View Employees</a></p>");
+            out.println("<script>setTimeout(function() { window.location.href = 'viewEmployees.html'; }, 3000);</script>");
+            out.println("</body></html>");
         } catch (Exception e) {
-            throw new ServletException("Error adding employee", e);
+            // Display failure message
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            out.println("<html><head><title>Employee Registration</title></head><body>");
+            out.println("<h2>Failed to register employee.</h2>");
+            out.println("<p>Please try again later.</p>");
+            out.println("</body></html>");
         }
     }
 }

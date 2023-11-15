@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body class="container text-center mt-5">
+
+    <h1>Welcome to Employee Management System</h1>
+	<button class="btn btn-primary" onclick="redirectTo('viewEmployees.html')">View Employees</button>
+    <button class="btn btn-success" onclick="redirectTo('editEmployee.html')">Edit Employee</button>
+    <button class="btn btn-danger" onclick="redirectTo('deleteEmployee.html')">Delete Employee</button>
+    <button class="btn btn-info" onclick="redirectTo('addEmployee.html')">Add Employee</button>
+
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>
