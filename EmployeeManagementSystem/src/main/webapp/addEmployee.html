@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <!-- Link to locally downloaded Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body class="container">
+
+    <h2 class="text-center my-5">Add Employee</h2>
+    <form id="addEmployeeForm" action="AddEmployee" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input type="text" class="form-control" id="designation" name="designation" required>
+        </div>
+
+        <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input type="number" class="form-control" id="salary" name="salary" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Employee</button>
+    </form>
+
+</body>
+</html>
