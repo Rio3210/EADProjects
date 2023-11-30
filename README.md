@@ -1,2 +1,2 @@
-# EmployeeManagementSystem
-A simple Crud Application
+# EAD Projects
+A simple Crud Applications
